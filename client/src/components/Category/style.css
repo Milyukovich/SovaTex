@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #d0becb;
+}
+
+.container div {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.container div a {
+  position: relative;
+  display: block;
+  font-size: 16px;
+  white-space: nowrap;
+  padding: 17px 7px;
+  background: transparent;
+}

@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "artem",
+    "password": null,
+    "database": "sovatex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "artem",
+    "password": null,
+    "database": "sovatex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "artem",
+    "password": null,
+    "database": "sovatex",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

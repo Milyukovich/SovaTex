@@ -1,0 +1,24 @@
+.containerDiv {
+  height: 30em;
+  position: relative;
+}
+
+.containerForm {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.containerForm input {
+  width: 20em;
+  height: 3em;
+  margin-bottom: 10px;
+}
+
+.containerForm button {
+  width: 20em;
+  height: 3em;
+}
