@@ -8,7 +8,7 @@ module.exports = (sequelize, DataTypes) => {
   }
   User.init(
     {
-      name: {
+      userName: {
         allowNull: false,
         type: DataTypes.STRING(40),
       },
@@ -17,13 +17,13 @@ module.exports = (sequelize, DataTypes) => {
         unique: true,
       },
       phone: {
-        allowNull: false,
+      //  allowNull: false, 
         type: DataTypes.STRING(10),
         unique: true,
       },
       password: {
         allowNull: false,
-        type: DataTypes.STRING(30),
+        type: DataTypes.STRING(62),
       },
       role: {
         type: DataTypes.STRING(5),
