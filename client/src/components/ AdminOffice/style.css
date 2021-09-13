@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.__select {
+  position: relative;
+  width: 230px;
+  height: 40px;
+  margin: 0 auto;
+
+  &[data-state="active"] {
+    .__select__title {
+      &::before {
+        transform: translate(-3px, -50%) rotate(-45deg);
+      }
+
+      &::after {
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+    
+    .__select__content {
+      opacity: 1;
+    }
+    
+    .__select__label + .__select__input + .__select__label {
+      max-height: 40px;
+      border-top-width: 1px;
+    }
+  }
+}
+.__select__title {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 8px 16px;
+
+  border-radius: 5px;
+  border: solid 1px #c7ccd1;
+  
+  cursor: pointer;
+
+  &::before,
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    right: 16px;
+
+    display: block;
+    width: 10px;
+    height: 2px;
+
+    transition: all 0.3s ease-out;
+
+    background-color: #333333;
+
+    transform: translate(-3px, -50%) rotate(45deg);
+  }
+  &::after {
+    transform: translate(3px, -50%) rotate(-45deg);
+  }
+
+  &:hover {
+    border-color: #D8093A;
+
+    &::before,
+    &::after {
+      background-color: #D8093A;
+    }
+  }
+}
+.reset {
+  display: flex;
+  width: 230px;
+  padding: 8px 16px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  
+  border: solid 1px #c7ccd1;
+  border-radius: 5px;
+  
+  transition: all 0.2s ease-out;
+  
+  cursor: pointer;
+  
+  font-weight: bold;
+  
+  background-color: #ffffff;
+  color: #333333;
+  
+  &:hover {
+    background-color: #D8093A;
+    color: #ffffff;
+  }
+}
+.__select__content {
+  position: absolute;
+  top: 40px;
+  left: 3px;
+
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 6px);
+
+  background-color: #ffffff;
+
+  border: 1px solid #c7ccd1;
+  border-top: none;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  
+  transition: all 0.3s ease-out;
+
+  opacity: 0;
+  z-index: 8;
+}
+.__select__input {
+  display: none;
+
+  &:checked + label {
+    background-color: #dedede;
+  }
+  &:disabled + label {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+}
+.__select__label {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  
+  transition: all 0.2s ease-out;
+
+  cursor: pointer;
+  
+  overflow: hidden;
+
+  & + input + & {
+    border-top: 0 solid #C7CCD160;
+  }
+
+  &:hover {
+    background-color: #D8093A !important;
+
+    color: #ffffff;
+  }
+}

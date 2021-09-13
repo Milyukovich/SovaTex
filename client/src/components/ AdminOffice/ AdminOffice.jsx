@@ -9,12 +9,19 @@ function AdminOffice() {
   useEffect(() => {
     axios.get(GET_ALL_CATEGORY_DB).then(res => setCategory(res.data))
   }, [])
+
+  const addCategory = () => {
+    
+  }
   
   return (
     <div>
-      <h1>Категории</h1>
-      {category.map((el) => <p key={el.id}>{el.name}</p>)}
-      <button>Добавить категорию</button>
+    <h1>Категории</h1>
+      <select>
+        {category.map((el) => <option key={el.id}>{el.name}</option>)}
+      </select>
+      
+      <button onClick={addCategory}>Добавить категорию</button>
     </div>
   );
 }

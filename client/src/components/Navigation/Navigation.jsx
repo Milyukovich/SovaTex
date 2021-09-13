@@ -28,9 +28,9 @@ function Navigation() {
       </ul>
 
       <Switch>
-        <Route exact path="/sova/admin/office">
-          {/* <AdminOffice /> */}
-        </Route>
+        {/* <Route exact path="/sova/admin/office">
+          <AdminOffice />
+        </Route> */}
         <Route exact path="/dashboard">
           {/* <Dashboard /> */}
         </Route>
