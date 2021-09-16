@@ -6,7 +6,7 @@ module.exports = {
       "Users",
       [
         {
-          name: "Admin",
+          userName: "Admin",
           email: "gabidov05@gmail.com",
           phone: "9180298214",
           password: "1",
@@ -15,7 +15,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "User",
+          userName: "User",
           email: "gabidov31@mail.ru",
           phone: "9180298213",
           password: "1",

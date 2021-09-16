@@ -11,12 +11,12 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "Простыни",
+          name: "Пододеяльники",
           createdAt: new Date(),
           updatedAt: new Date(),
         },
         {
-          name: "Полотенца",
+          name: "Простыни",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

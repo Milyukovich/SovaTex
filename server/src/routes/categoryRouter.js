@@ -10,4 +10,20 @@ categoryRouter.get("/", async (req, res) => {
   res.json(category);
 });
 
+categoryRouter.post("/", async (req, res) => {
+  const { name } = req.body;
+  try {
+    await Category.create({ name });
+    res.json({
+      data: "Категория успешно добавлена",
+      statusCode: 200,
+    });
+  } catch (error) {
+    return res.json({
+      data: "Такая категория уже существует",
+      statusCode: 400,
+    });
+  }
+});
+
 module.exports = categoryRouter;

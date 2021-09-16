@@ -12,9 +12,14 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
+      vendorCode: {
+        allowNull: false,
+        type: DataTypes.STRING,
+        unique: true,
+      },
       price: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       composition: {
         allowNull: false,
@@ -35,6 +40,9 @@ module.exports = (sequelize, DataTypes) => {
       dimensions: {
         allowNull: false,
         type: DataTypes.STRING,
+      },
+      imagePath: {
+        type: DataTypes.TEXT,
       },
       categoryID: {
         allowNull: false,

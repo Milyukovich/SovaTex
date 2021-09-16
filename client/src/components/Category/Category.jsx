@@ -1,29 +1,18 @@
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./style.css";
+import { Link } from "react-router-dom";
+import "./Category.css";
 
 function Category() {
   return (
-    <div className="container">
-    <Router>
+    <div className="containerNavCat">
       <div>
-        <Link to="spalna">Спальня</Link>
+        <Link to="bedsheets">Простыни</Link>
       </div>
       <div>
-        <Link to="odejda">Одежда</Link>
+        <Link to="duvetcovers">Пододеяльники</Link>
       </div>
       <div>
-        <Link to="decor">Декор</Link>
+        <Link to="pillowcases">Наволочки</Link>
       </div>
-
-      <Switch>
-        <Route exact path="/spalna">
-          {/* <About /> */}
-        </Route>
-        <Route exact path="/odejda">
-          {/* <Dashboard /> */}
-        </Route>
-      </Switch>
-      </Router>
     </div>
   );
 }

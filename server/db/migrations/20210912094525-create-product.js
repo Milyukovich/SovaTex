@@ -12,9 +12,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
+      vendorCode: {
+        allowNull: false,
+        type: Sequelize.STRING,
+        unique: true,
+      },
       price: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       composition: {
         allowNull: false,
@@ -35,6 +40,9 @@ module.exports = {
       dimensions: {
         allowNull: false,
         type: Sequelize.STRING,
+      },
+      imagePath: {
+        type: Sequelize.TEXT,
       },
       categoryID: {
         allowNull: false,

@@ -7,15 +7,15 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "artem",
-    "password": null,
+    "username": "chlen",
+    "password": 123,
     "database": "sovatex",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "production": {
-    "username": "artem",
-    "password": null,
+    "username": "chlen",
+    "password": 123,
     "database": "sovatex",
     "host": "127.0.0.1",
     "dialect": "postgres"

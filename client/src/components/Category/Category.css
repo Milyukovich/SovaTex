@@ -1,18 +1,17 @@
-.container {
+.containerNavCat {
   display: flex;
   justify-content: center;
   background-color: #d0becb;
+  max-width: 2000px;
 }
 
-.container div {
+.containerNavCat div {
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
   justify-content: space-between;
 }
 
-.container div a {
+.containerNavCat div a {
   position: relative;
   display: block;
   font-size: 16px;
