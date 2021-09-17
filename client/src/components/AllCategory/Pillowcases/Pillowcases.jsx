@@ -10,7 +10,7 @@ function Pillowcases() {
 
   useEffect(() => {
     if (!products) dispatch(getAllPillowcasesStart());
-  }, []);
+  }, [products, dispatch]);
 
   return (
     <div>

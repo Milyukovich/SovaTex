@@ -6,13 +6,12 @@ import "../AllCategory.css";
 
 function BedSheets() {
   const products = useSelector((state) => state.product.bedSheets);
-  const state = useSelector((state) => state.product);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     if (!products) dispatch(getAllBedSheetsStart());
-  }, []);
+  }, [products, dispatch]);
 
   return (
     <div>

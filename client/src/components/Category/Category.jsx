@@ -5,13 +5,13 @@ function Category() {
   return (
     <div className="containerNavCat">
       <div>
-        <Link to="bedsheets">Простыни</Link>
+        <Link to="/bedsheets">Простыни</Link>
       </div>
       <div>
-        <Link to="duvetcovers">Пододеяльники</Link>
+        <Link to="/duvetcovers">Пододеяльники</Link>
       </div>
       <div>
-        <Link to="pillowcases">Наволочки</Link>
+        <Link to="/pillowcases">Наволочки</Link>
       </div>
     </div>
   );

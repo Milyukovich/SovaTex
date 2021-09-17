@@ -10,7 +10,7 @@ function DuvetCovers() {
 
   useEffect(() => {
     if (!products) dispatch(getAllDuvetCoversStart());
-  }, []);
+  }, [products, dispatch]);
 
   return (
     <div>

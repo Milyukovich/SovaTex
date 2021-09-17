@@ -12,9 +12,7 @@ import "./App.css";
 function App() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(checkAuth());
-  }, []);
+  useEffect(() => dispatch(checkAuth()), [dispatch]);
 
   return (
     <>

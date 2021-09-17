@@ -1,8 +1,8 @@
 import { DELETE_USER, SET_USER } from "../types/userTypes";
-import * as endPoints from "../../config/endPoints";
 import { disableLoader, enableLoader } from "./loader.ac";
+import * as endPoints from "../../config/endPoints";
 
-export const getUserFromServer = id => async dispatch => {
+export const getUserFromServer = (id) => async (dispatch) => {
   dispatch(enableLoader());
   const response = await fetch(endPoints.getUser(id), {
     credentials: "include",
@@ -14,12 +14,12 @@ export const getUserFromServer = id => async dispatch => {
   dispatch(disableLoader());
 };
 
-export const setUser = user => ({
+export const setUser = (user) => ({
   type: SET_USER,
   payload: user,
 });
 
-export const signUp = (payload, history) => async dispatch => {
+export const signUp = (payload, history) => async (dispatch) => {
   dispatch(enableLoader());
   const response = await fetch(endPoints.signUp(), {
     method: "POST",
@@ -39,7 +39,7 @@ export const signUp = (payload, history) => async dispatch => {
   dispatch(disableLoader());
 };
 
-export const signIn = (payload, history, from) => async dispatch => {
+export const signIn = (payload, history, from) => async (dispatch) => {
   dispatch(enableLoader());
   const response = await fetch(endPoints.signIn(), {
     method: "POST",
@@ -59,7 +59,7 @@ export const signIn = (payload, history, from) => async dispatch => {
   dispatch(disableLoader());
 };
 
-export const signOut = () => async dispatch => {
+export const signOut = () => async (dispatch) => {
   const response = await fetch(endPoints.signOut(), {
     credentials: "include",
   });
@@ -68,7 +68,7 @@ export const signOut = () => async dispatch => {
   }
 };
 
-export const checkAuth = () => async dispatch => {
+export const checkAuth = () => async (dispatch) => {
   const response = await fetch(endPoints.checkAuth(), {
     credentials: "include",
   });

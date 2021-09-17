@@ -5,6 +5,8 @@ export const initialState = {
 };
 
 const getInitState = () => {
+  let basket = JSON.parse(window.localStorage.getItem("basket"));
+  if (!basket) localStorage.setItem("basket", JSON.stringify([]));
   const stateFromLS = JSON.parse(window.localStorage.getItem("redux"));
   return stateFromLS ? stateFromLS : initialState;
 };

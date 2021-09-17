@@ -11,9 +11,10 @@ function FullProduct() {
   const history = useHistory();
 
   const [characteristic, setCharacteristic] = useState(true);
+  const [addInBasket, setAddInBasket] = useState(true);
+  const [valueProduct, setValueProduct] = useState(1);
   const [copyLink, setCopyLink] = useState(true);
   const [product, setProduct] = useState([]);
-  const [valueProduct, setValueProduct] = useState(1);
 
   const {
     name,
@@ -31,11 +32,13 @@ function FullProduct() {
 
   useEffect(() => {
     dispatch(getProductByArticleStart({ article, setProduct }));
-  }, []);
+  }, [article, dispatch]);
 
   return (
     <div className="fullProduct">
-      <img src={`http://localhost:3005/uploads/${imagePath}`} />
+      {imagePath ? (
+        <img src={`http://localhost:3005/uploads/${imagePath}`} alt="#" />
+      ) : null}
       <div className="productCharacteristic">
         <h5 onClick={() => history.goBack()}>Вернуться</h5>
         <p>Арт. {vendorCode} </p>
@@ -45,9 +48,7 @@ function FullProduct() {
           <span>Размер</span>
           <select className="sizeProduct">
             <option>Выбрать размер</option>
-            <option selected="" value="91936">
-              Полутораспальное{" "}
-            </option>
+            <option value="91936">Полутораспальное </option>
             <option value="91937">Евро </option>
           </select>
         </div>
@@ -89,7 +90,17 @@ function FullProduct() {
             </div>
           </div>
         </div>
-        <button className="addInBasket">Добавить в корзину</button>
+        <button
+          onClick={() => {
+            let basket = JSON.parse(window.localStorage.getItem("basket"));
+            basket.push(product);
+            localStorage.setItem("basket", JSON.stringify(basket));
+            setAddInBasket(false);
+          }}
+          className="addInBasket"
+        >
+          {addInBasket ? "Добавить в корзину" : "Товар в корзине"}
+        </button>
         <br />
         <div className="copyLink">
           <p>Ссылка на товар</p>

@@ -12,6 +12,7 @@ function Product({ products }) {
               <img
                 className="imageProduct"
                 src={`http://localhost:3005/uploads/${el.imagePath}`}
+                alt="#"
               />
               <p>{el.name}</p>
               <p>{el.price}</p>

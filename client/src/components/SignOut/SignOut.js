@@ -9,7 +9,7 @@ const SignOut = () => {
   useEffect(() => {
     dispatch(signOut());
     history.push("/");
-  }, []);
+  }, [dispatch, history]);
 
   return null;
 };

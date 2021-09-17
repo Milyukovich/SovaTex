@@ -1,15 +1,18 @@
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import AdminOffice from "../ AdminOffice/ AdminOffice";
-import Admin from "../Admin/Admin";
-import BedSheets from "../AllCategory/ BedSheets/BedSheets";
 import DuvetCovers from "../AllCategory/DuvetCovers/DuvetCovers";
 import FullProduct from "../AllCategory/FullProduct/FullProduct";
 import Pillowcases from "../AllCategory/Pillowcases/Pillowcases";
+import BedSheets from "../AllCategory/ BedSheets/BedSheets";
+import AdminOffice from "../ AdminOffice/ AdminOffice";
+import { Switch, Route } from "react-router-dom";
+import Basket from "../Basket/Basket";
+import Admin from "../Admin/Admin";
 
 function Main() {
   return (
-    // <Router>
     <Switch>
+      <Route exact path="/basket">
+        <Basket />
+      </Route>
       <Route exact path="/duvetcovers">
         <DuvetCovers />
       </Route>
@@ -29,7 +32,6 @@ function Main() {
         <AdminOffice />
       </Route>
     </Switch>
-    //  </Router>
   );
 }
 
