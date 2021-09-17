@@ -19,7 +19,7 @@ function Main() {
       <Route exact path="/bedsheets">
         <BedSheets />
       </Route>
-      <Route exact path="/:article">
+      <Route exact path="/article/:article">
         <FullProduct />
       </Route>
       <Route exact path="/admin">

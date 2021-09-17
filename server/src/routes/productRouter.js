@@ -18,9 +18,9 @@ productRouter.get("/bedsheets", async (req, res) => {
 });
 
 productRouter.get("/:article", async (req, res) => {
-  // console.log(req.params);
-  // const bedsheets = await Product.findAll({ where: { categoryID: 3 } });
-  // res.json(bedsheets);
+  const { article } = req.params;
+  const product = await Product.findOne({ where: { vendorCode: article } });
+  res.json(product);
 });
 
 module.exports = productRouter;

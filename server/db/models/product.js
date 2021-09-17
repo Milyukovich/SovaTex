@@ -21,7 +21,11 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         type: DataTypes.STRING,
       },
-      composition: {
+      compositionProduct: {
+        allowNull: false,
+        type: DataTypes.STRING,
+      },
+      material: {
         allowNull: false,
         type: DataTypes.STRING,
       },
@@ -35,13 +39,17 @@ module.exports = (sequelize, DataTypes) => {
       },
       weight: {
         allowNull: false,
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
       },
       dimensions: {
         allowNull: false,
         type: DataTypes.STRING,
       },
       imagePath: {
+        type: DataTypes.TEXT,
+      },
+      care: {
+        allowNull: false,
         type: DataTypes.TEXT,
       },
       categoryID: {

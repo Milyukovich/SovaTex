@@ -21,7 +21,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
       },
-      composition: {
+      compositionProduct: {
+        allowNull: false,
+        type: Sequelize.STRING,
+      },
+      material: {
         allowNull: false,
         type: Sequelize.STRING,
       },
@@ -35,13 +39,17 @@ module.exports = {
       },
       weight: {
         allowNull: false,
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
       },
       dimensions: {
         allowNull: false,
         type: Sequelize.STRING,
       },
       imagePath: {
+        type: Sequelize.TEXT,
+      },
+      care: {
+        allowNull: false,
         type: Sequelize.TEXT,
       },
       categoryID: {

@@ -44,8 +44,10 @@ export const getAllDuvetCovers = (duvetCovers) => ({
   payload: duvetCovers,
 });
 
-export const getProductByArticleStart = (article) => async (dispatch) => {
-  axios
-    .get(`${GET_PRODUCT_BY_ARTICLE_DB}/${article}`)
-    .then((res) => dispatch(getAllDuvetCovers(res.data)));
-};
+export const getProductByArticleStart =
+  ({ article, setProduct }) =>
+  async (dispatch) => {
+    axios
+      .get(`${GET_PRODUCT_BY_ARTICLE_DB}/${article}`)
+      .then((res) => setProduct(res.data));
+  };

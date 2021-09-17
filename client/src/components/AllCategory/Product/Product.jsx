@@ -8,7 +8,7 @@ function Product({ products }) {
       {products ? (
         products.map((el) => (
           <div className="containerProduct" key={el.id}>
-            <Link to={`/${el.vendorCode}`}>
+            <Link to={`/article/${el.vendorCode}`}>
               <img
                 className="imageProduct"
                 src={`http://localhost:3005/uploads/${el.imagePath}`}
