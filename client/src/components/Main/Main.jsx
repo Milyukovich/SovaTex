@@ -1,7 +1,5 @@
-import DuvetCovers from "../AllCategory/DuvetCovers/DuvetCovers";
+import ProductCategory from "../AllCategory/ProductCategory/ProductCategory";
 import FullProduct from "../AllCategory/FullProduct/FullProduct";
-import Pillowcases from "../AllCategory/Pillowcases/Pillowcases";
-import BedSheets from "../AllCategory/ BedSheets/BedSheets";
 import AdminOffice from "../ AdminOffice/ AdminOffice";
 import { Switch, Route } from "react-router-dom";
 import Basket from "../Basket/Basket";
@@ -14,13 +12,13 @@ function Main() {
         <Basket />
       </Route>
       <Route exact path="/duvetcovers">
-        <DuvetCovers />
+        <ProductCategory nameRu={"Пододеяльники"} name={"duvetcovers"} />
       </Route>
       <Route exact path="/pillowcases">
-        <Pillowcases />
+        <ProductCategory nameRu={"Наволочки"} name={"pillowcases"} />
       </Route>
       <Route exact path="/bedsheets">
-        <BedSheets />
+        <ProductCategory nameRu={"Простыни"} name={"bedsheets"} />
       </Route>
       <Route exact path="/article/:article">
         <FullProduct />

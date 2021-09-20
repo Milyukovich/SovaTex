@@ -44,63 +44,66 @@ function FullProduct() {
         <p>Арт. {vendorCode} </p>
         <h3>{name}</h3>
         <h2>{price}₽</h2>
-        <div className="productInfo">
-          <span>Размер</span>
-          <select className="sizeProduct">
-            <option>Выбрать размер</option>
-            <option value="91936">Полутораспальное </option>
-            <option value="91937">Евро </option>
-          </select>
-        </div>
-        <div className="productInfo">
-          <span>Количество</span>
-          <div className="valueProduct">
-            <div
-              onClick={() =>
-                valueProduct > 1 ? setValueProduct((prev) => prev - 1) : null
-              }
-            >
-              <svg
-                width="10"
-                height="2"
-                viewBox="0 0 10 2"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.57573 1.014L9.52173 1.896H0.539727L0.431727 1.788L0.521727 0.888H9.48573L9.57573 1.014Z"
-                  fill="#A0A0A0"
-                ></path>
-              </svg>
-            </div>
-            <div>{valueProduct}</div>
-            <div onClick={() => setValueProduct((prev) => prev + 1)}>
-              <svg
-                width="8"
-                height="8"
-                viewBox="0 0 8 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.49978 0.576V3.726H7.64978L7.75778 3.834L7.66778 4.734H4.49978V7.92L3.59978 7.992L3.49178 7.884V4.734H0.341781L0.233781 4.626L0.323781 3.726H3.49178V0.539999L4.39178 0.45L4.49978 0.576Z"
-                  fill="#A0A0A0"
-                ></path>
-              </svg>
-            </div>
-          </div>
-        </div>
-        <button
-          onClick={() => {
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            console.log(Object.fromEntries(new FormData(e.target)));
             let basket = JSON.parse(window.localStorage.getItem("basket"));
             basket.push(product);
             localStorage.setItem("basket", JSON.stringify(basket));
             setAddInBasket(false);
           }}
-          className="addInBasket"
         >
-          {addInBasket ? "Добавить в корзину" : "Товар в корзине"}
-        </button>
+          <div className="productInfo">
+            <span>Размер</span>
+            <select name="size" className="sizeProduct">
+              <option value="1">Выбрать размер</option>
+              <option value="2">Полутораспальное </option>
+              <option value="3">Евро </option>
+            </select>
+          </div>
+          <div className="productInfo">
+            <span>Количество</span>
+            <div className="valueProduct">
+              <div
+                onClick={() =>
+                  valueProduct > 1 ? setValueProduct((prev) => prev - 1) : null
+                }
+              >
+                <svg
+                  width="10"
+                  height="2"
+                  viewBox="0 0 10 2"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M9.57573 1.014L9.52173 1.896H0.539727L0.431727 1.788L0.521727 0.888H9.48573L9.57573 1.014Z"
+                    fill="#A0A0A0"
+                  ></path>
+                </svg>
+              </div>
+              <div>{valueProduct}</div>
+              <div onClick={() => setValueProduct((prev) => prev + 1)}>
+                <svg
+                  width="8"
+                  height="8"
+                  viewBox="0 0 8 8"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M4.49978 0.576V3.726H7.64978L7.75778 3.834L7.66778 4.734H4.49978V7.92L3.59978 7.992L3.49178 7.884V4.734H0.341781L0.233781 4.626L0.323781 3.726H3.49178V0.539999L4.39178 0.45L4.49978 0.576Z"
+                    fill="#A0A0A0"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          <button className="addInBasket">
+            {addInBasket ? "Добавить в корзину" : "Товар в корзине"}
+          </button>
+        </form>
         <br />
         <div className="copyLink">
           <p>Ссылка на товар</p>

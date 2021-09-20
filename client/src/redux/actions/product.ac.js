@@ -1,7 +1,5 @@
 import {
-  GET_ALL_BEDSHEETS_DB,
-  GET_ALL_DUVETCOVERS_DB,
-  GET_ALL_PILLOWCASES_DB,
+  GET_ALL_PRODUCT_DB,
   GET_PRODUCT_BY_ARTICLE_DB,
 } from "../../urls/ProductUrls";
 import {
@@ -11,39 +9,6 @@ import {
 } from "../types/productTypes";
 import axios from "axios";
 
-export const getAllPillowcasesStart = () => async (dispatch) => {
-  axios
-    .get(GET_ALL_PILLOWCASES_DB)
-    .then((res) => dispatch(getAllPillowcases(res.data)));
-};
-
-export const getAllPillowcases = (pillowcases) => ({
-  type: GET_ALL_PILLOWCASES,
-  payload: pillowcases,
-});
-
-export const getAllBedSheetsStart = () => async (dispatch) => {
-  axios
-    .get(GET_ALL_BEDSHEETS_DB)
-    .then((res) => dispatch(getAllBedSheets(res.data)));
-};
-
-export const getAllBedSheets = (bedSheets) => ({
-  type: GET_ALL_BEDSHEETS,
-  payload: bedSheets,
-});
-
-export const getAllDuvetCoversStart = () => async (dispatch) => {
-  axios
-    .get(GET_ALL_DUVETCOVERS_DB)
-    .then((res) => dispatch(getAllDuvetCovers(res.data)));
-};
-
-export const getAllDuvetCovers = (duvetCovers) => ({
-  type: GET_ALL_DUVETCOVERS,
-  payload: duvetCovers,
-});
-
 export const getProductByArticleStart =
   ({ article, setProduct }) =>
   async (dispatch) => {
@@ -51,3 +16,26 @@ export const getProductByArticleStart =
       .get(`${GET_PRODUCT_BY_ARTICLE_DB}/${article}`)
       .then((res) => setProduct(res.data));
   };
+
+export const getAllProductStart = (name) => async (dispatch) => {
+  axios.get(`${GET_ALL_PRODUCT_DB}/${name}`).then((res) => {
+    if (name === "duvetcovers") dispatch(getAllProduct(res.data));
+    if (name === "pillowcases") dispatch(getAllPillowcases(res.data));
+    if (name === "bedsheets") dispatch(getAllBedSheets(res.data));
+  });
+};
+
+export const getAllProduct = (duvetCovers) => ({
+  type: GET_ALL_DUVETCOVERS,
+  payload: duvetCovers,
+});
+
+export const getAllPillowcases = (pillowcases) => ({
+  type: GET_ALL_PILLOWCASES,
+  payload: pillowcases,
+});
+
+export const getAllBedSheets = (bedSheets) => ({
+  type: GET_ALL_BEDSHEETS,
+  payload: bedSheets,
+});
